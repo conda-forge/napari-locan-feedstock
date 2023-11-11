@@ -1,5 +1,5 @@
 {% set name = "napari-locan" %}
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-locan-{{ version }}.tar.gz
-  sha256: 790e56bc88d1cbeb0869471bbfd0a15797289de2855e8ed12b9ed2936a8de818
+  sha256: 9f6e50e2726a9941c67fae5870f10507e4f146ac0f90f18a014f8fe61b7ade89
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
