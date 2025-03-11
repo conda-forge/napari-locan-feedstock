@@ -16,18 +16,18 @@ build:
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >=3.9
-    - setuptools >=61
-    - setuptools-scm >=6.2
+    - setuptools >=64
+    - setuptools-scm >=8
     - wheel
   run:
-    - locan >=0.17
-    - matplotlib-base <3.8.0
+    - python >={{ python_min }}
+    - locan >=0.18
+    - matplotlib-base
     - napari
     - napari-matplotlib
     - numpy
-    - python >=3.9
     - qtpy
 
 test:
@@ -36,6 +36,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
     - pyside2
 
