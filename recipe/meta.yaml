@@ -1,13 +1,14 @@
 {% set name = "napari-locan" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-locan-{{ version }}.tar.gz
-  sha256: b6ac14908fdde19309ea9d92ac747de452d0d2e2f5ad1e92d9953201b5a0f564
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 9ba5801152d252fc72defb8f8076565a8b6ddc6e069dc6a9f68aff6af18c6b44
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -16,18 +17,18 @@ build:
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >=3.9
-    - setuptools >=61
-    - setuptools-scm >=6.2
+    - setuptools >=64
+    - setuptools-scm >=8
     - wheel
   run:
-    - locan >=0.17
-    - matplotlib-base <3.8.0
+    - python >={{ python_min }}
+    - locan >=0.18
+    - matplotlib-base
     - napari
     - napari-matplotlib
     - numpy
-    - python >=3.9
     - qtpy
 
 test:
@@ -36,6 +37,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
     - pyside2
 
