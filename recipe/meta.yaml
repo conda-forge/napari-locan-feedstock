@@ -25,7 +25,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - locan >=0.18
-    - matplotlib-base <3.8.0
+    - matplotlib-base
     - napari
     - napari-matplotlib
     - numpy
@@ -56,6 +56,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - goanpeca
-    - jaimergp
     - sdoose
