@@ -1,5 +1,5 @@
 {% set name = "napari-locan" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 9ba5801152d252fc72defb8f8076565a8b6ddc6e069dc6a9f68aff6af18c6b44
+  sha256: 664b36b290989ea851fb65779965897789c04857cad76092c6498a895ebef39c
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
@@ -56,6 +56,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - goanpeca
-    - jaimergp
     - sdoose
